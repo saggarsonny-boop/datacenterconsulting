@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { SignedIn, SignedOut, SignInButton, useUser } from "@clerk/nextjs";
-import { UploadButton } from "@/lib/uploadthing";
+// import { UploadButton } from "@/lib/uploadthing";
 
 const intakeInitial = {
   contactName: "",
@@ -207,17 +207,6 @@ export function PortalClient() {
             </label>
           </div>
 
-          <div className="row" style={{ marginTop: 14 }}>
-            <UploadButton
-              endpoint="documents"
-              onClientUploadComplete={() => {
-                setUploadStatus("Upload complete.");
-                loadActivity();
-              }}
-              onUploadError={(error) => setUploadStatus(error.message)}
-            />
-            <span className="muted">Upload files directly (UploadThing)</span>
-          </div>
 
           <form className="row" onSubmit={saveExternalLink} style={{ marginTop: 14 }}>
             <input

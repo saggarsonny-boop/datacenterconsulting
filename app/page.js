@@ -1,4 +1,3 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { PortalClient } from "@/components/portal-client";
 
 export default function HomePage() {
@@ -40,16 +39,7 @@ export default function HomePage() {
             <img src="/favicon.svg" alt="Datacenter Consulting" className="brand-mark" />
             <span>Datacenter Consulting</span>
           </div>
-          <div className="auth-area">
-            <SignedOut>
-              <SignInButton mode="modal">
-                <button className="button button-secondary" type="button">Login</button>
-              </SignInButton>
-            </SignedOut>
-            <SignedIn>
-              <UserButton afterSignOutUrl="/" />
-            </SignedIn>
-          </div>
+          <a className="button button-secondary" href="#partner-portal">Partner Access</a>
         </nav>
 
         <section className="hero-content">

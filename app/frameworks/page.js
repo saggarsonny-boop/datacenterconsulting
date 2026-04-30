@@ -47,7 +47,7 @@ export default function FrameworksPage() {
               </li>
             ))}
           </ul>
-          <p className="body-copy">Need a stakeholder-specific adaptation? Use the <Link href="/contact">contact paths</Link> to request one.</p>
+          <p className="body-copy">Need a stakeholder-specific adaptation? Use the <Link href="/contribute">contribution intake</Link> to request one.</p>
         </article>
       </section>
 

@@ -15,7 +15,7 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link className="button button-secondary" href="/contact">
+          <Link className="button button-secondary" href="/contribute">
             Submit Materials
           </Link>
         </div>

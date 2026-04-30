@@ -41,7 +41,7 @@ export default function HomePage() {
             before infrastructure decisions harden into conflict or wasted effort across global markets.
           </p>
           <div className="hero-actions">
-            <Link className="button button-primary" href="/contact">Start a Stakeholder Path</Link>
+            <Link className="button button-primary" href="/contribute">Start a Stakeholder Path</Link>
             <Link className="button button-secondary" href="/frameworks">Explore Open Frameworks</Link>
           </div>
           <div className="hero-metrics" aria-label="Institute priorities">
@@ -176,7 +176,7 @@ export default function HomePage() {
               <li key={item.question}>{item.question}</li>
             ))}
           </ul>
-          <p className="body-copy"><Link href="/faq">See the full FAQ</Link> or <Link href="/contact">submit stakeholder intake</Link>.</p>
+          <p className="body-copy"><Link href="/faq">See the full FAQ</Link> or <Link href="/contribute">submit stakeholder intake</Link>.</p>
         </article>
       </section>
 

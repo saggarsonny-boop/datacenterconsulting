@@ -1,83 +1,95 @@
+import Link from "next/link";
 import { PortalClient } from "@/components/portal-client";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import {
+  faqItems,
+  frameworkLibrary,
+  resourceDownloads,
+  researchTracks,
+  stakeholders
+} from "@/lib/site-content";
 
 export default function HomePage() {
-  const researchAgenda = [
-    {
-      title: "Grid-aware siting",
-      description: "Publish plain-language frameworks for evaluating land, transmission, load growth, water, and permitting tradeoffs before projects harden into sunk-cost decisions."
-    },
-    {
-      title: "Transparent procurement",
-      description: "Create neutral bid and evaluation standards so utilities, landowners, communities, and builders can compare proposals on consistent terms."
-    },
-    {
-      title: "Public-interest implementation",
-      description: "Release open checklists, governance templates, and implementation playbooks that help communities participate without needing specialist jargon."
-    }
-  ];
-
-  const frameworkLibrary = [
-    "Open siting checklist for non-experts",
-    "Utility and community diligence rubric",
-    "Procurement transparency framework",
-    "Public-benefit implementation playbook"
-  ];
-
-  const advisoryBoard = [
-    "Grid and utility operators",
-    "Land-use and permitting counsel",
-    "Construction and delivery partners",
-    "Community, public health, and policy advisors"
-  ];
-
   return (
     <main className="page-shell">
       <div className="ambient-grid" aria-hidden="true" />
-      <header className="hero panel">
-        <nav className="topbar">
-          <div className="brand">
-            <img src="/favicon.svg" alt="Datacenter Consulting" className="brand-mark" />
-            <span>Datacenter Consulting</span>
-          </div>
-          <a className="button button-secondary" href="#partner-portal">Partner Access</a>
-        </nav>
+      <SiteHeader />
 
+      <section className="hero panel hero-home">
         <section className="hero-content">
           <p className="eyebrow">Independent research institute</p>
-          <h1>Independent guidance for data center siting, power stewardship, and public trust.</h1>
+          <h1>Independent guidance for data center siting, power stewardship, and stakeholder alignment.</h1>
           <p className="lede">
-            DataCenterConsulting.org is being built as a neutral think tank: a place to publish open frameworks,
-            translate infrastructure decisions for non-experts, and help builders, utilities, landowners, and
-            communities evaluate projects through a shared public-interest lens.
+            DataCenterConsulting.org is a neutral think tank built to help landowners, utilities, builders,
+            municipalities, capital partners, and communities understand what matters, what to bring, and what to ask
+            before infrastructure decisions harden into conflict or wasted effort across global markets.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#frameworks">Explore Open Frameworks</a>
-            <a className="button button-secondary" href="#partner-portal">Partner Portal</a>
+            <Link className="button button-primary" href="/contact">Start a Stakeholder Path</Link>
+            <Link className="button button-secondary" href="/frameworks">Explore Open Frameworks</Link>
           </div>
           <div className="hero-metrics" aria-label="Institute priorities">
             <article>
               <strong>Open by default</strong>
-              <span>Frameworks and implementation guidance will be released publicly whenever possible.</span>
+              <span>Frameworks, briefs, and implementation guidance are designed to be reused publicly.</span>
             </article>
             <article>
               <strong>Impartial by design</strong>
-              <span>The institute is positioned to work across bidders and stakeholders rather than advocate for one in-house builder.</span>
+              <span>The institute compares tradeoffs across stakeholders instead of functioning as a captive operator voice.</span>
             </article>
             <article>
-              <strong>Legible to non-experts</strong>
-              <span>Every major research output should make siting and power tradeoffs understandable to civic and community audiences.</span>
+              <strong>Actionable immediately</strong>
+              <span>Every stakeholder path makes clear what you should send, what you can expect back, and what comes next.</span>
             </article>
           </div>
         </section>
-      </header>
+      </section>
+
+      <section className="panel section narrative-grid" id="stakeholders">
+        <div>
+          <p className="section-kicker">Stakeholder paths</p>
+          <h2>Choose the path that matches who you are</h2>
+          <p className="body-copy">
+            Each stakeholder view is built around two questions: why this institute is useful to you, and what you are expected to provide or will receive in return.
+          </p>
+        </div>
+        <div className="stakeholder-grid">
+          {stakeholders.map((item) => (
+            <article className="feature-card stakeholder-card" key={item.key}>
+              <p className="section-kicker">{item.label}</p>
+              <p>{item.useful}</p>
+              <div className="micro-grid">
+                <div>
+                  <strong>Bring</strong>
+                  <ul className="micro-list">
+                    {item.provide.map((value) => (
+                      <li key={value}>{value}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <strong>Receive</strong>
+                  <ul className="micro-list">
+                    {item.receive.map((value) => (
+                      <li key={value}>{value}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="panel section narrative-grid" id="agenda">
         <div>
           <p className="section-kicker">Research agenda</p>
-          <h2>What this institute is here to do</h2>
+          <h2>What the institute is publishing and operationalizing</h2>
+          <p className="body-copy">Educational outputs are written for technical and non-technical audiences and designed for adaptation across regions, not only one country.</p>
         </div>
         <div className="agenda-grid">
-          {researchAgenda.map((item) => (
+          {researchTracks.map((item) => (
             <article className="feature-card" key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
@@ -89,11 +101,13 @@ export default function HomePage() {
       <section className="split-grid">
         <article className="panel section" id="publications">
           <p className="section-kicker">Public reports</p>
-          <h2>Publishing roadmap</h2>
+          <h2>Research and resource library</h2>
           <ul className="bullet-list">
-            <li>Founding thesis on transparent data center siting and power stewardship.</li>
-            <li>White paper on how communities, utilities, and developers can evaluate proposals on comparable terms.</li>
-            <li>Annual state-of-the-market brief on bottlenecks, permitting risk, and grid constraints.</li>
+            {resourceDownloads.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} target="_blank" rel="noreferrer">{item.title}</a>
+              </li>
+            ))}
           </ul>
         </article>
 
@@ -102,9 +116,10 @@ export default function HomePage() {
           <h2>Free tools the ecosystem can use</h2>
           <ul className="bullet-list">
             {frameworkLibrary.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item.title}>{item.title}</li>
             ))}
           </ul>
+          <p className="body-copy"><Link href="/frameworks">Go deeper into the frameworks library.</Link></p>
         </article>
       </section>
 
@@ -120,13 +135,14 @@ export default function HomePage() {
         </article>
 
         <article className="panel section">
-          <p className="section-kicker">Advisory board</p>
-          <h2>Cross-disciplinary oversight</h2>
+          <p className="section-kicker">FAQ and contact paths</p>
+          <h2>What people ask before they engage</h2>
           <ul className="bullet-list">
-            {advisoryBoard.map((item) => (
-              <li key={item}>{item}</li>
+            {faqItems.slice(0, 4).map((item) => (
+              <li key={item.question}>{item.question}</li>
             ))}
           </ul>
+          <p className="body-copy"><Link href="/faq">See the full FAQ</Link> or <Link href="/contact">submit stakeholder intake</Link>.</p>
         </article>
       </section>
 
@@ -143,6 +159,8 @@ export default function HomePage() {
         </div>
         <PortalClient />
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

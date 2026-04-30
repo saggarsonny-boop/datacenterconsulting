@@ -57,11 +57,42 @@ body {
   padding: 22px;
 }
 
+.site-hero {
+  padding-bottom: 18px;
+}
+
+.hero-home {
+  padding: 22px;
+}
+
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+}
+
+.site-topbar {
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-link,
+.text-link {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.text-link:hover,
+.footer-list a:hover {
+  color: var(--teal);
 }
 
 .brand {
@@ -167,11 +198,46 @@ h1 {
   gap: 18px;
 }
 
+.page-intro {
+  display: grid;
+  gap: 8px;
+}
+
 .agenda-grid,
-.split-grid {
+.split-grid,
+.stakeholder-grid,
+.resource-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+}
+
+.stack-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.stakeholder-card {
+  display: grid;
+  gap: 12px;
+}
+
+.micro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.micro-list,
+.footer-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.micro-list li + li,
+.footer-list li + li {
+  margin-top: 6px;
 }
 
 .bullet-list {
@@ -257,6 +323,12 @@ textarea {
   color: var(--ink);
 }
 
+a.button {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
 .muted {
   color: var(--muted);
 }
@@ -297,6 +369,68 @@ textarea {
   margin-top: 8px;
 }
 
+.form-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: 18px;
+}
+
+.form-context {
+  align-self: start;
+}
+
+.intake-form {
+  display: grid;
+  gap: 14px;
+}
+
+.category-fieldset {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.category-fieldset legend {
+  padding: 0 8px;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.checkbox-item {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.92rem;
+}
+
+.checkbox-item input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 18px;
+}
+
+.site-footer h3 {
+  margin: 0;
+}
+
 .portal-stack {
   display: grid;
   gap: 18px;
@@ -306,9 +440,19 @@ textarea {
   .hero-metrics,
   .agenda-grid,
   .split-grid,
+  .stakeholder-grid,
+  .resource-grid,
+  .micro-grid,
+  .form-shell,
   .partner-intro,
   .portal-callouts,
+  .checkbox-grid,
+  .site-footer,
   .grid-two {
     grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    width: 100%;
   }
 }

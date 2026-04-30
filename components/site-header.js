@@ -7,7 +7,7 @@ export function SiteHeader() {
       <nav className="topbar site-topbar">
         <Link className="brand" href="/">
           <img src="/favicon.svg" alt="DCC electric logo" className="brand-mark" />
-          <span>DCC</span>
+          <span className="brand-text">DCC</span>
         </Link>
         <div className="nav-links">
           {siteNav.map((item) => (

@@ -4,18 +4,24 @@
       <stop offset="0%" stop-color="#00E5CF"/>
       <stop offset="100%" stop-color="#29B6F6"/>
     </linearGradient>
-    <linearGradient id="bolt" x1="32" y1="6" x2="32" y2="58" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bolt" x1="32" y1="5" x2="32" y2="50" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#FFFDE7"/>
       <stop offset="40%" stop-color="#FFD740"/>
       <stop offset="100%" stop-color="#FF6D00"/>
     </linearGradient>
+    <linearGradient id="letters" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5CF"/>
+      <stop offset="100%" stop-color="#29B6F6"/>
+    </linearGradient>
     <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <!-- Arc path for curved text: a gentle upward curve below the bolt -->
+    <path id="arc" d="M 10 56 A 26 26 0 0 0 54 56"/>
   </defs>
 
   <!-- Dark background plate -->
@@ -24,13 +30,13 @@
   <!-- Teal gradient border -->
   <rect x="1.5" y="1.5" width="61" height="61" rx="11.5" fill="none" stroke="url(#border)" stroke-width="2.5"/>
 
-  <!-- Subtle horizontal power lines left/right of bolt -->
-  <line x1="4" y1="32" x2="18" y2="32" stroke="#00E5CF" stroke-width="1.2" opacity="0.35" stroke-linecap="round"/>
-  <line x1="46" y1="32" x2="60" y2="32" stroke="#00E5CF" stroke-width="1.2" opacity="0.35" stroke-linecap="round"/>
-  <circle cx="18" cy="32" r="2" fill="none" stroke="#00E5CF" stroke-width="1" opacity="0.5"/>
-  <circle cx="46" cy="32" r="2" fill="none" stroke="#00E5CF" stroke-width="1" opacity="0.5"/>
-
-  <!-- Bold centred lightning bolt -->
-  <path d="M37 6 L21 34 L31 34 L25 58 L45 30 L34 30 Z"
+  <!-- Bold centred lightning bolt (slightly raised to leave room for text) -->
+  <path d="M36 5 L20 31 L30 31 L24 51 L44 27 L33 27 Z"
         fill="url(#bolt)" filter="url(#glow)"/>
+
+  <!-- D C C curved along arc below bolt -->
+  <text font-family="'Arial Black', Arial, sans-serif" font-weight="900"
+        font-size="11" letter-spacing="5" fill="url(#letters)">
+    <textPath href="#arc" startOffset="50%" text-anchor="middle">DCC</textPath>
+  </text>
 </svg>

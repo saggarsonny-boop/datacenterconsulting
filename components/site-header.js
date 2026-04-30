@@ -6,8 +6,8 @@ export function SiteHeader() {
     <header className="hero panel site-hero">
       <nav className="topbar site-topbar">
         <Link className="brand" href="/">
-          <img src="/favicon.svg" alt="Datacenter Consulting" className="brand-mark" />
-          <span>Datacenter Consulting</span>
+          <img src="/favicon.svg" alt="DataCenterConsulting.org" className="brand-mark" />
+          <span>DataCenterConsulting.org</span>
         </Link>
         <div className="nav-links">
           {siteNav.map((item) => (

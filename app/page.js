@@ -11,6 +11,21 @@ import {
 } from "@/lib/site-content";
 
 export default function HomePage() {
+  const authorityPillars = [
+    {
+      title: "Research-first method",
+      detail: "Claims are grounded in traceable assumptions, comparative frameworks, and documented stakeholder input rather than vendor marketing language."
+    },
+    {
+      title: "Two-sided grid perspective",
+      detail: "Analysis addresses both directions of risk: grid disturbances affecting compute and compute behavior affecting grid stability."
+    },
+    {
+      title: "Global adaptation",
+      detail: "Outputs are designed for 50 Hz and 60 Hz environments with regional policy, utility, and permitting context layered in."
+    }
+  ];
+
   return (
     <main className="page-shell">
       <div className="ambient-grid" aria-hidden="true" />
@@ -44,6 +59,25 @@ export default function HomePage() {
             </article>
           </div>
         </section>
+      </section>
+
+      <section className="panel section authority-panel">
+        <div>
+          <p className="section-kicker">Why trust this institute</p>
+          <h2>Substance over form: methods, comparability, and execution discipline.</h2>
+          <p className="body-copy">
+            Authority comes from repeatable process and clear comparables, not from sounding technical.
+            This site is structured so each stakeholder can see the method, the expected inputs, and the decision outputs.
+          </p>
+        </div>
+        <div className="stakeholder-grid">
+          {authorityPillars.map((item) => (
+            <article key={item.title} className="feature-card stakeholder-card">
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="panel section narrative-grid" id="stakeholders">

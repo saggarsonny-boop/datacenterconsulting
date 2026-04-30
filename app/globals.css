@@ -100,14 +100,14 @@ body {
   align-items: center;
   gap: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  font-size: 0.96rem;
   font-weight: 700;
 }
 
 .brand-mark {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
 }
 
 .hero-content {

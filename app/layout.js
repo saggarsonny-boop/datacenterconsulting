@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Datacenter Consulting",
+  title: "DataCenterConsulting",
   description: "Independent think tank publishing open frameworks, research, and partner tools for transparent data center siting and power stewardship.",
   icons: {
     icon: "/favicon.svg"

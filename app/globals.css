@@ -472,6 +472,41 @@ a.button {
   gap: 18px;
 }
 
+.admin-console {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-controls {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-list {
+  display: grid;
+  gap: 8px;
+  max-height: 520px;
+  overflow: auto;
+}
+
+.admin-list details {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(5, 23, 30, 0.65);
+}
+
+.admin-list summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.admin-list p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
 @media (max-width: 860px) {
   .hero-metrics,
   .agenda-grid,

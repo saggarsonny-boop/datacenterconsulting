@@ -80,7 +80,8 @@ function isAdminAuthorized(request) {
   }
 
   const { searchParams } = new URL(request.url);
-  const provided = searchParams.get("key") || request.headers.get("x-admin-key");
+  const bearerToken = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "") || "";
+  const provided = searchParams.get("key") || request.headers.get("x-admin-key") || bearerToken;
   return provided === adminKey;
 }
 

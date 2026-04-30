@@ -18,6 +18,22 @@ export function AdminReviewConsole() {
   const [stakeholderItems, setStakeholderItems] = useState([]);
   const [trackerItems, setTrackerItems] = useState([]);
 
+  function buildAuthHeaders() {
+    const key = adminKey.trim();
+    return {
+      "x-admin-key": key,
+      Authorization: `Bearer ${key}`
+    };
+  }
+
+  async function parseJsonSafe(response) {
+    try {
+      return await response.json();
+    } catch {
+      return null;
+    }
+  }
+
   async function loadData() {
     if (!adminKey.trim()) {
       setStatus("Admin key required.");
@@ -28,15 +44,27 @@ export function AdminReviewConsole() {
 
     const [stakeholderResponse, trackerResponse] = await Promise.all([
       fetch("/api/stakeholder-intake", {
-        headers: { "x-admin-key": adminKey.trim() }
+        headers: buildAuthHeaders(),
+        cache: "no-store"
       }),
       fetch("/api/tracker-contributions", {
-        headers: { "x-admin-key": adminKey.trim() }
+        headers: buildAuthHeaders(),
+        cache: "no-store"
       })
     ]);
 
     if (!stakeholderResponse.ok || !trackerResponse.ok) {
-      setStatus("Unable to load records. Verify admin key and server settings.");
+      const [stakeholderError, trackerError] = await Promise.all([
+        parseJsonSafe(stakeholderResponse),
+        parseJsonSafe(trackerResponse)
+      ]);
+
+      const stakeholderMessage = stakeholderError?.error || "unknown error";
+      const trackerMessage = trackerError?.error || "unknown error";
+
+      setStatus(
+        `Load failed | stakeholder: ${stakeholderResponse.status} (${stakeholderMessage}) | tracker: ${trackerResponse.status} (${trackerMessage})`
+      );
       return;
     }
 
@@ -55,11 +83,14 @@ export function AdminReviewConsole() {
     }
 
     const response = await fetch(`${endpoint}?format=csv`, {
-      headers: { "x-admin-key": adminKey.trim() }
+      headers: buildAuthHeaders(),
+      cache: "no-store"
     });
 
     if (!response.ok) {
-      setStatus("CSV export failed. Verify admin key.");
+      const errorPayload = await parseJsonSafe(response);
+      const message = errorPayload?.error || "unknown error";
+      setStatus(`CSV export failed (${response.status}: ${message}).`);
       return;
     }
 

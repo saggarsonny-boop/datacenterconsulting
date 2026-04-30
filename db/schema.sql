@@ -42,6 +42,23 @@ create table if not exists stakeholder_requests (
   created_at timestamptz not null default now()
 );
 
+create table if not exists tracker_contributions (
+  id bigserial primary key,
+  contributor_name text not null,
+  organization text,
+  email text not null,
+  geography text,
+  stakeholder_type text,
+  data_type text,
+  summary text not null,
+  source_link text,
+  confidence_level text,
+  permission_to_publish boolean not null default false,
+  notes text,
+  created_at timestamptz not null default now()
+);
+
 create index if not exists idx_intake_user_created on intake_submissions(clerk_user_id, created_at desc);
 create index if not exists idx_uploads_user_created on document_uploads(clerk_user_id, created_at desc);
 create index if not exists idx_stakeholder_requests_created on stakeholder_requests(created_at desc);
+create index if not exists idx_tracker_contributions_created on tracker_contributions(created_at desc);

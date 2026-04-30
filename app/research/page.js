@@ -1,6 +1,12 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { researchTracks, resourceDownloads } from "@/lib/site-content";
+import {
+  frequencyComparisonRows,
+  policyFaqItems,
+  regionalGridModels,
+  researchTracks,
+  resourceDownloads
+} from "@/lib/site-content";
 
 export default function ResearchPage() {
   return (
@@ -30,6 +36,62 @@ export default function ResearchPage() {
             </ul>
           </article>
         ))}
+      </section>
+
+      <section className="panel section">
+        <p className="section-kicker">Regional grid models</p>
+        <div className="stack-grid">
+          {regionalGridModels.map((model) => (
+            <article key={model.title} className="feature-card stakeholder-card">
+              <p className="section-kicker">{model.frequency}</p>
+              <h3>{model.title}</h3>
+              <p>{model.summary}</p>
+              <ul className="micro-list">
+                {model.priorityMetrics.map((metric) => (
+                  <li key={metric}>{metric}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="panel section">
+        <p className="section-kicker">50 Hz / 60 Hz comparison</p>
+        <div className="table-wrap">
+          <table className="insight-table">
+            <thead>
+              <tr>
+                <th>Topic</th>
+                <th>50 Hz context</th>
+                <th>60 Hz context</th>
+                <th>Implementation implication</th>
+              </tr>
+            </thead>
+            <tbody>
+              {frequencyComparisonRows.map((row) => (
+                <tr key={row.topic}>
+                  <td>{row.topic}</td>
+                  <td>{row.hz50}</td>
+                  <td>{row.hz60}</td>
+                  <td>{row.implication}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="panel section">
+        <p className="section-kicker">Cross-border policy FAQ</p>
+        <div className="stack-grid faq-stack">
+          {policyFaqItems.map((item) => (
+            <article key={item.question} className="feature-card stakeholder-card">
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="panel section">

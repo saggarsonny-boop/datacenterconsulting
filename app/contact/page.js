@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StakeholderIntakeForm } from "@/components/stakeholder-intake-form";
+import { TrackerContributionForm } from "@/components/tracker-contribution-form";
 import { contactPaths } from "@/lib/site-content";
 
 export default function ContactPage() {
@@ -28,6 +29,20 @@ export default function ContactPage() {
       </section>
 
       <StakeholderIntakeForm />
+
+      <section className="panel section narrative-grid">
+        <div>
+          <p className="section-kicker">Build the global tracker with us</p>
+          <h2>Contribute data directly or upload your own entries internally</h2>
+          <ul className="bullet-list">
+            <li>External contributors can submit validated links, summaries, and regional details using the form below.</li>
+            <li>Your internal team can submit the same form for manual entries from calls, meetings, or private documents.</li>
+            <li>All contributions can be exported for normalization and merge into your master tracking database.</li>
+          </ul>
+        </div>
+      </section>
+
+      <TrackerContributionForm />
       <SiteFooter />
     </main>
   );

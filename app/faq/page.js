@@ -1,6 +1,6 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { faqItems } from "@/lib/site-content";
+import { faqItems, policyFaqItems } from "@/lib/site-content";
 
 export default function FaqPage() {
   return (
@@ -18,6 +18,19 @@ export default function FaqPage() {
 
       <section className="stack-grid faq-stack">
         {faqItems.map((item) => (
+          <article className="panel section faq-item" key={item.question}>
+            <h2>{item.question}</h2>
+            <p className="body-copy">{item.answer}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="stack-grid faq-stack">
+        <article className="panel section">
+          <p className="section-kicker">Global policy and transmission</p>
+          <h2>Cross-border and regional planning questions</h2>
+        </article>
+        {policyFaqItems.map((item) => (
           <article className="panel section faq-item" key={item.question}>
             <h2>{item.question}</h2>
             <p className="body-copy">{item.answer}</p>

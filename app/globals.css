@@ -436,6 +436,37 @@ a.button {
   margin: 0;
 }
 
+.table-wrap {
+  overflow-x: auto;
+}
+
+.insight-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.insight-table th,
+.insight-table td {
+  border: 1px solid var(--line);
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.insight-table th {
+  color: var(--ink);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(5, 23, 30, 0.72);
+}
+
+.insight-table td {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .portal-stack {
   display: grid;
   gap: 18px;

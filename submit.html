@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Your Property — WS Advisors</title>
+  <meta name="description" content="Submit your non-revenue-generating property to WS Advisors. Upload your survey, appraisal, and property details to be considered for data center investor introductions." />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ════════════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand" aria-label="WS Advisors home">
+          <span class="brand-name">WS Advisors</span>
+          <span class="brand-sub">Property &amp; Data Center Consulting</span>
+        </a>
+        <ul class="navbar-nav" id="navList" role="list">
+          <li><a href="index.html#opportunity">The Opportunity</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#property-types">Property Types</a></li>
+          <li><a href="index.html#why-us">Why Us</a></li>
+        </ul>
+        <button class="navbar-toggle" id="navToggle" aria-controls="navList" aria-expanded="false" aria-label="Toggle menu">
+          <span class="hamburger" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ FORM HERO ══════════════════════════════════════════════ -->
+  <header class="form-hero" role="banner">
+    <div class="container">
+      <span class="section-tag" style="background:rgba(232,160,32,0.22);margin-bottom:0.75rem;">Confidential &amp; No-Obligation</span>
+      <h1>Submit Your Property for Review</h1>
+      <p>
+        Complete the form below to introduce your property to our network of data center investors and venture capital firms. All submissions are reviewed by our site assessment team and treated with strict confidentiality.
+      </p>
+    </div>
+  </header>
+
+  <!-- ═══ PROGRESS BAR ══════════════════════════════════════════ -->
+  <div class="form-progress" role="navigation" aria-label="Form progress">
+    <div class="container">
+      <div class="progress-steps" aria-label="Steps">
+        <div class="progress-step active" aria-current="step">
+          <span class="p-dot">1</span>
+          <span>Your Info</span>
+        </div>
+        <div class="progress-line" aria-hidden="true"></div>
+        <div class="progress-step">
+          <span class="p-dot">2</span>
+          <span>Property Details</span>
+        </div>
+        <div class="progress-line" aria-hidden="true"></div>
+        <div class="progress-step">
+          <span class="p-dot">3</span>
+          <span>Documents</span>
+        </div>
+        <div class="progress-line" aria-hidden="true"></div>
+        <div class="progress-step">
+          <span class="p-dot">4</span>
+          <span>Preferences</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FORM SECTION ══════════════════════════════════════════ -->
+  <main class="form-section" id="main-content">
+    <div class="container">
+      <div class="form-layout">
+
+        <!-- ── Main Form ─────────────────────────────────── -->
+        <div>
+          <form id="propertyForm" novalidate aria-label="Property submission form" enctype="multipart/form-data">
+
+            <!-- ─ Section 1: Contact Info ─────────────────── -->
+            <div class="form-card" id="section-contact">
+              <div class="form-step-header">
+                <div class="step-badge" aria-hidden="true">1</div>
+                <div>
+                  <h2>Your Contact Information</h2>
+                  <p>All information is kept strictly confidential.</p>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="firstName" name="first_name" placeholder="Jane" required autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="lastName" name="last_name" placeholder="Smith" required autocomplete="family-name" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="jane@example.com" required autocomplete="email" />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="(314) 555-0100" required autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="ownerType">I am the <span class="req" aria-hidden="true">*</span></label>
+                <select id="ownerType" name="owner_type" required>
+                  <option value="" disabled selected>Select your role…</option>
+                  <option value="owner">Property Owner (Individual)</option>
+                  <option value="entity">Property Owner (Entity / LLC / Corp)</option>
+                  <option value="trustee">Trustee or Estate Representative</option>
+                  <option value="agent">Authorized Agent / Representative</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company / Entity Name (if applicable)</label>
+                <input type="text" id="company" name="company" placeholder="ABC Holdings LLC" autocomplete="organization" />
+              </div>
+
+              <div class="form-group">
+                <label for="preferredContact">Preferred Contact Method</label>
+                <select id="preferredContact" name="preferred_contact">
+                  <option value="email">Email</option>
+                  <option value="phone">Phone</option>
+                  <option value="either">Either</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- ─ Section 2: Property Details ──────────────── -->
+            <div class="form-card" id="section-property" style="margin-top:1.5rem;">
+              <div class="form-step-header">
+                <div class="step-badge" aria-hidden="true">2</div>
+                <div>
+                  <h2>Property Details</h2>
+                  <p>Tell us about the property you'd like to submit.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="propAddress">Property Street Address <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="propAddress" name="property_address" placeholder="123 Main Street" required autocomplete="street-address" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="propCity">City <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="propCity" name="property_city" placeholder="St. Louis" required />
+                </div>
+                <div class="form-group">
+                  <label for="propState">State <span class="req" aria-hidden="true">*</span></label>
+                  <select id="propState" name="property_state" required>
+                    <option value="" disabled selected>Select state…</option>
+                    <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+                    <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+                    <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+                    <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+                    <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+                    <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+                    <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+                    <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+                    <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+                    <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+                    <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+                    <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+                    <option>Wisconsin</option><option>Wyoming</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="propZip">ZIP Code <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="propZip" name="property_zip" placeholder="63101" required maxlength="10" />
+                </div>
+                <div class="form-group">
+                  <label for="propCounty">County</label>
+                  <input type="text" id="propCounty" name="property_county" placeholder="St. Louis County" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="parcelId">Parcel ID / APN (if known)</label>
+                <input type="text" id="parcelId" name="parcel_id" placeholder="12-3456-7890" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="totalAcres">Total Acreage <span class="req" aria-hidden="true">*</span></label>
+                  <input type="number" id="totalAcres" name="total_acres" placeholder="e.g. 12.5" min="0.1" step="0.01" required />
+                </div>
+                <div class="form-group">
+                  <label for="currentZoning">Current Zoning</label>
+                  <select id="currentZoning" name="current_zoning">
+                    <option value="" disabled selected>Select zoning…</option>
+                    <option>Residential – Single Family</option>
+                    <option>Residential – Multi-Family</option>
+                    <option>Commercial</option>
+                    <option>Industrial / Manufacturing</option>
+                    <option>Agricultural</option>
+                    <option>Mixed Use</option>
+                    <option>Unzoned / Rural</option>
+                    <option>Planned Development</option>
+                    <option>Unknown</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="propertyType">Property Classification <span class="req" aria-hidden="true">*</span></label>
+                <select id="propertyType" name="property_type" required>
+                  <option value="" disabled selected>Select property type…</option>
+                  <option>Vacant / Undeveloped Land</option>
+                  <option>Vacant Land – Previously Agricultural</option>
+                  <option>Urban Infill Lot</option>
+                  <option>Brownfield / Former Industrial Site</option>
+                  <option>Dilapidated / Deteriorated Building</option>
+                  <option>Condemned Structure</option>
+                  <option>Derelict / Abandoned Building</option>
+                  <option>Former Warehouse or Distribution Center</option>
+                  <option>Former Retail or Commercial Building</option>
+                  <option>Former Office Building</option>
+                  <option>Airport-Adjacent Property</option>
+                  <option>Mixed / Multiple Parcels</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="currentCondition">Current Condition / Description <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="currentCondition" name="current_condition" rows="4" placeholder="Describe the current state of the property: any structures present, their condition, utilities available, road access, any known environmental issues, etc." required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="askingPrice">Asking Price or Value Expectation (USD)</label>
+                <input type="number" id="askingPrice" name="asking_price" placeholder="e.g. 500000" min="0" step="1000" />
+              </div>
+
+              <div class="form-group">
+                <label for="revenueStatus">Is the property currently generating any revenue?</label>
+                <select id="revenueStatus" name="revenue_status">
+                  <option value="no">No — it is entirely non-revenue-generating</option>
+                  <option value="minimal">Minimal — lease or use generates very little income</option>
+                  <option value="yes_partial">Yes — partially in use</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="powerInfo">Power &amp; Utility Information (if known)</label>
+                <textarea id="powerInfo" name="power_info" rows="3" placeholder="e.g. Connected to 3-phase power, nearby substation, fiber infrastructure, water/sewer available, etc."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="surveyDate">Date of Most Recent Survey (if available)</label>
+                <input type="text" id="surveyDate" name="survey_date" placeholder="e.g. March 2023" />
+              </div>
+
+              <div class="form-group">
+                <label for="appraisalDate">Date of Most Recent Appraisal (if available)</label>
+                <input type="text" id="appraisalDate" name="appraisal_date" placeholder="e.g. January 2024" />
+              </div>
+            </div>
+
+            <!-- ─ Section 3: Document Uploads ───────────────── -->
+            <div class="form-card" id="section-docs" style="margin-top:1.5rem;">
+              <div class="form-step-header">
+                <div class="step-badge" aria-hidden="true">3</div>
+                <div>
+                  <h2>Document Uploads</h2>
+                  <p>Objective documentation strengthens your submission and accelerates investor interest.</p>
+                </div>
+              </div>
+
+              <!-- Land Survey Upload -->
+              <div class="form-group">
+                <label>
+                  <i class="fa-solid fa-drafting-compass" aria-hidden="true" style="color:var(--blue);margin-right:0.3rem;"></i>
+                  Land Survey
+                </label>
+                <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.6rem;">
+                  Please upload your most recent certified land survey including boundary lines, corner stakes/monuments, easements, and any encroachments. Accepted formats: PDF, TIFF, JPG. (Max 50 MB)
+                </p>
+                <div class="upload-zone" role="button" tabindex="0" aria-label="Upload land survey file">
+                  <input type="file" name="survey_file" id="surveyFile" accept=".pdf,.tif,.tiff,.jpg,.jpeg" aria-label="Land survey file input" />
+                  <div class="upload-icon" aria-hidden="true"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                  <p><strong>Click to upload</strong> or drag &amp; drop</p>
+                  <p>PDF, TIFF, or JPG · Max 50 MB</p>
+                </div>
+                <div class="file-list" id="surveyFileList" aria-live="polite" aria-label="Uploaded survey files"></div>
+              </div>
+
+              <hr class="form-divider" />
+
+              <!-- Appraisal Upload -->
+              <div class="form-group">
+                <label>
+                  <i class="fa-solid fa-file-invoice-dollar" aria-hidden="true" style="color:var(--blue);margin-right:0.3rem;"></i>
+                  Property Appraisal
+                </label>
+                <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.6rem;">
+                  Upload the most recent certified appraisal report. While appraisals are subjective by nature, they provide important baseline context alongside your objective survey data. Accepted formats: PDF. (Max 50 MB)
+                </p>
+                <div class="upload-zone" role="button" tabindex="0" aria-label="Upload appraisal file">
+                  <input type="file" name="appraisal_file" id="appraisalFile" accept=".pdf" aria-label="Appraisal file input" />
+                  <div class="upload-icon" aria-hidden="true"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                  <p><strong>Click to upload</strong> or drag &amp; drop</p>
+                  <p>PDF only · Max 50 MB</p>
+                </div>
+                <div class="file-list" id="appraisalFileList" aria-live="polite" aria-label="Uploaded appraisal files"></div>
+              </div>
+
+              <hr class="form-divider" />
+
+              <!-- Additional Documents Upload -->
+              <div class="form-group">
+                <label>
+                  <i class="fa-solid fa-folder-open" aria-hidden="true" style="color:var(--blue);margin-right:0.3rem;"></i>
+                  Additional Supporting Documents (Optional)
+                </label>
+                <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.6rem;">
+                  Title reports, environmental assessments, plat maps, utility letters, photos, or any other relevant documentation. PDF, JPG, PNG accepted. Multiple files allowed. (Max 100 MB total)
+                </p>
+                <div class="upload-zone" role="button" tabindex="0" aria-label="Upload additional documents">
+                  <input type="file" name="additional_files" id="additionalFiles" accept=".pdf,.jpg,.jpeg,.png" multiple aria-label="Additional documents file input" />
+                  <div class="upload-icon" aria-hidden="true"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                  <p><strong>Click to upload</strong> or drag &amp; drop</p>
+                  <p>PDF, JPG, PNG · Multiple files allowed</p>
+                </div>
+                <div class="file-list" id="additionalFileList" aria-live="polite" aria-label="Uploaded additional files"></div>
+              </div>
+            </div>
+
+            <!-- ─ Section 4: Potential Uses & Preferences ─── -->
+            <div class="form-card" id="section-preferences" style="margin-top:1.5rem;">
+              <div class="form-step-header">
+                <div class="step-badge" aria-hidden="true">4</div>
+                <div>
+                  <h2>Potential Uses &amp; Your Preferences</h2>
+                  <p>Check all that apply. This helps us match your property with the right investors.</p>
+                </div>
+              </div>
+
+              <div class="form-group uses-group">
+                <label>In your opinion, what is this property best suited for? <span class="req" aria-hidden="true">*</span></label>
+                <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.8rem;">Select all that apply.</p>
+                <div class="checkbox-grid" role="group" aria-label="Potential property uses">
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="data_center" />
+                    <i class="fa-solid fa-server" aria-hidden="true" style="color:var(--blue);"></i>
+                    Data Center / Co-Location
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="industrial" />
+                    <i class="fa-solid fa-industry" aria-hidden="true" style="color:var(--blue);"></i>
+                    Industrial / Warehouse
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="commercial" />
+                    <i class="fa-solid fa-store" aria-hidden="true" style="color:var(--blue);"></i>
+                    Commercial / Retail
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="residential" />
+                    <i class="fa-solid fa-house" aria-hidden="true" style="color:var(--blue);"></i>
+                    Residential Development
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="mixed_use" />
+                    <i class="fa-solid fa-city" aria-hidden="true" style="color:var(--blue);"></i>
+                    Mixed Use
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="office" />
+                    <i class="fa-solid fa-building" aria-hidden="true" style="color:var(--blue);"></i>
+                    Office / Corporate Campus
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="logistics" />
+                    <i class="fa-solid fa-truck-fast" aria-hidden="true" style="color:var(--blue);"></i>
+                    Logistics / Distribution Hub
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="renewable_energy" />
+                    <i class="fa-solid fa-solar-panel" aria-hidden="true" style="color:var(--blue);"></i>
+                    Renewable Energy (Solar / Wind)
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="agriculture" />
+                    <i class="fa-solid fa-seedling" aria-hidden="true" style="color:var(--blue);"></i>
+                    Agricultural / Agribusiness
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="hospitality" />
+                    <i class="fa-solid fa-hotel" aria-hidden="true" style="color:var(--blue);"></i>
+                    Hospitality / Entertainment
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="healthcare" />
+                    <i class="fa-solid fa-heart-pulse" aria-hidden="true" style="color:var(--blue);"></i>
+                    Healthcare / Medical
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="potential_use" value="open_to_all" />
+                    <i class="fa-solid fa-circle-check" aria-hidden="true" style="color:var(--blue);"></i>
+                    Open to Any Best Use
+                  </label>
+                </div>
+              </div>
+
+              <hr class="form-divider" />
+
+              <div class="form-group">
+                <label for="transactionType">Preferred Transaction Type <span class="req" aria-hidden="true">*</span></label>
+                <select id="transactionType" name="transaction_type" required>
+                  <option value="" disabled selected>Select preference…</option>
+                  <option value="sale">Outright Sale</option>
+                  <option value="lease">Long-Term Ground Lease</option>
+                  <option value="sale_leaseback">Sale-Leaseback</option>
+                  <option value="jv">Joint Venture / Partnership</option>
+                  <option value="open">Open to Any Structure</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="timeline">Desired Timeline</label>
+                <select id="timeline" name="timeline">
+                  <option value="asap">As soon as possible</option>
+                  <option value="6months">Within 6 months</option>
+                  <option value="1year">Within 1 year</option>
+                  <option value="flexible">Flexible / No rush</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="additionalNotes">Additional Notes or Context (Optional)</label>
+                <textarea id="additionalNotes" name="additional_notes" rows="5" placeholder="Share anything else that would help us evaluate or present your property — ownership history, environmental studies completed, prior offers received, access to utilities, reasons for selling, etc."></textarea>
+              </div>
+
+              <hr class="form-divider" />
+
+              <!-- Consents -->
+              <div class="form-group">
+                <label class="checkbox-item" style="border:none;padding:0;gap:0.8rem;">
+                  <input type="checkbox" name="consent_contact" id="consentContact" required style="width:18px;height:18px;flex-shrink:0;" />
+                  <span style="font-size:0.88rem;color:var(--text);">
+                    I consent to WS Advisors contacting me regarding my submission. <span class="req" aria-hidden="true">*</span>
+                  </span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="checkbox-item" style="border:none;padding:0;gap:0.8rem;">
+                  <input type="checkbox" name="consent_confidentiality" id="consentConf" required style="width:18px;height:18px;flex-shrink:0;" />
+                  <span style="font-size:0.88rem;color:var(--text);">
+                    I understand that my property information will be shared only with NDA-bound, pre-screened investors and will not be disclosed publicly. <span class="req" aria-hidden="true">*</span>
+                  </span>
+                </label>
+              </div>
+
+              <div style="margin-top:2rem;">
+                <button type="submit" class="btn btn-primary btn-lg btn-full" id="submitBtn">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                  Submit My Property for Review
+                </button>
+              </div>
+
+              <p class="form-note">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                Your information is encrypted and confidential. By submitting, you authorize WS Advisors to review your property information and present it, under NDA, to qualified data center investors. There is no cost and no obligation.
+              </p>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- ── Sidebar ────────────────────────────────────── -->
+        <aside class="form-sidebar" aria-label="Submission information">
+
+          <div class="sidebar-card highlight">
+            <h3><i class="fa-solid fa-bolt" aria-hidden="true"></i> Why Submit Now?</h3>
+            <p>Investor capital deployment windows are time-sensitive. Properties submitted now are reviewed first. Don't let another site take the capital you deserve.</p>
+          </div>
+
+          <div class="sidebar-card">
+            <h3><i class="fa-solid fa-circle-question" aria-hidden="true"></i> What Happens Next?</h3>
+            <ul role="list">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> You'll receive a confirmation within 24 hours</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Our team reviews your submission within 3–5 business days</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> If qualifying, your property is presented to our investor network</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> We facilitate any interested investor introductions</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h3><i class="fa-solid fa-drafting-compass" aria-hidden="true"></i> About Land Surveys</h3>
+            <p>A certified land survey is the most objective documentation you can provide. It establishes:</p>
+            <ul role="list" style="margin-top:0.5rem;">
+              <li><i class="fa-solid fa-map-pin" aria-hidden="true"></i> Exact legal boundary lines</li>
+              <li><i class="fa-solid fa-map-pin" aria-hidden="true"></i> Corner stakes &amp; monuments (iron pins, concrete monuments)</li>
+              <li><i class="fa-solid fa-map-pin" aria-hidden="true"></i> Easements &amp; rights-of-way</li>
+              <li><i class="fa-solid fa-map-pin" aria-hidden="true"></i> Encroachments &amp; encumbrances</li>
+              <li><i class="fa-solid fa-map-pin" aria-hidden="true"></i> Topography &amp; elevation (if ALTA/NSPS survey)</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h3><i class="fa-solid fa-lock" aria-hidden="true"></i> Confidentiality Guarantee</h3>
+            <p>
+              All investors in our network sign mutual non-disclosure agreements before receiving any property information. Your identity and property details are never shared publicly or with unqualified parties.
+            </p>
+          </div>
+
+          <div class="sidebar-card">
+            <h3><i class="fa-solid fa-phone" aria-hidden="true"></i> Prefer to Talk First?</h3>
+            <p style="margin-bottom:0.75rem;">We understand. Speak with a member of our team before submitting:</p>
+            <a href="tel:+13145550100" class="btn btn-navy btn-full" style="font-size:0.9rem;">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i> (314) 555-0100
+            </a>
+            <a href="mailto:info@wsadvisors.com" class="btn btn-outline" style="width:100%;justify-content:center;color:var(--navy);border-color:var(--border);margin-top:0.5rem;font-size:0.9rem;">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i> info@wsadvisors.com
+            </a>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="brand-name">WS Advisors</span>
+          <span class="brand-sub">Property &amp; Data Center Consulting</span>
+          <p>WS Advisors is a DBA of WS Investment Corp. We are the exclusive intermediary connecting property owners of non-revenue-generating land with America's leading data center investors and venture capital firms.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul role="list">
+            <li><a href="index.html#opportunity">The Opportunity</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="index.html#property-types">Property Types</a></li>
+            <li><a href="index.html#why-us">Why WS Advisors</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul role="list">
+            <li><a href="mailto:info@wsadvisors.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i>&nbsp; info@wsadvisors.com</a></li>
+            <li><a href="tel:+13145550100"><i class="fa-solid fa-phone" aria-hidden="true"></i>&nbsp; (314) 555-0100</a></li>
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>&nbsp; St. Louis, MO &amp; Nationwide</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 WS Investment Corp. DBA WS Advisors. All rights reserved.</span>
+        <span>
+          <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a> &nbsp;·&nbsp; <a href="#">Confidentiality Agreement</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
